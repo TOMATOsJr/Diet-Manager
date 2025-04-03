@@ -1,0 +1,47 @@
+sequenceDiagram
+    participant User
+    participant GUI
+    participant System
+    participant Database
+
+    User ->> GUI: Open Composite Food Section
+    User ->> GUI: Choose "Create New Composite Food"
+    GUI ->> System: Show Food Creation Form
+    User ->> GUI: Enter Ingredient Foods & Servings
+    GUI ->> System: Validate Composite Food Data
+    System ->> Database: Save Composite Food with User ID
+    Database -->> System: Save Success
+    System -->> GUI: Show "Composite Food Created"
+
+    alt User Wants to Edit an Existing Composite Food
+        User ->> GUI: Choose "Edit Composite Food"
+        GUI ->> System: Request Ownership Validation
+        System ->> Database: Check If User is Creator
+        alt User is the Creator
+            Database -->> System: Ownership Confirmed
+            System ->> GUI: Allow Editing
+            User ->> GUI: Modify Ingredients/Servings
+            GUI ->> System: Validate & Save Changes
+            System ->> Database: Update Composite Food Data
+            Database -->> System: Update Success
+            System -->> GUI: Show "Composite Food Updated"
+        else User is NOT the Creator
+            Database -->> System: Ownership Denied
+            System -->> GUI: Show "Edit Not Allowed"
+        end
+    end
+
+    alt User Wants to Delete Composite Food
+        User ->> GUI: Choose "Delete Composite Food"
+        GUI ->> System: Request Ownership Validation
+        System ->> Database: Check If User is Creator
+        alt User is the Creator
+            Database -->> System: Ownership Confirmed
+            System ->> Database: Delete Composite Food Entry
+            Database -->> System: Deletion Success
+            System -->> GUI: Show "Composite Food Deleted"
+        else User is NOT the Creator
+            Database -->> System: Ownership Denied
+            System -->> GUI: Show "Delete Not Allowed"
+        end
+    end

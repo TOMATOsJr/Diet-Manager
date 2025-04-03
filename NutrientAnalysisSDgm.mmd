@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant User
+    participant System
+    participant Database
+
+    User ->> System: Open Analysis Section
+    System ->> Database: Fetch User Food Logs
+    Database -->> System: Retrieve Nutrient Data
+
+    System ->> System: Calculate Daily Intake
+    System ->> System: Compare with Recommended Values
+
+    alt Deficiencies Found
+        System ->> User: Show Missing Nutrients
+        System ->> Database: Fetch Food Suggestions
+        Database -->> System: Retrieve Nutrient-Rich Foods
+        System ->> User: Recommend Foods to Improve Intake
+    else No Deficiencies
+        System ->> User: Show "All Nutrients Balanced"
+    end

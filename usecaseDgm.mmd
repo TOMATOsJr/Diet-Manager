@@ -1,0 +1,20 @@
+graph TD
+    User[👤 User] -->|Logs in| Auth[🔑 User Authentication]
+    User -->|Logs meals| Logging[📝 Daily Logging]
+    User -->|Creates and saves recipes| Recipe[🍽️ Recipe Creation]
+    User -->|Analyzes calorie & nutrient intake| Analysis[📊 Calorie & Nutrient Analysis]
+
+    Auth -->|Registers new user| Register[🆕 Register]
+    Auth -->|Logs in existing user| Login[🔐 Login]
+    Auth -->|Manages profile| Profile[⚙️ Manage Profile]
+
+    Logging -->|Adds food items| AddFood[🍎 Add Food Entry]
+    Logging -->|Removes/edit logs| EditLog[✏️ Edit/Delete Log]
+
+    Recipe -->|Creates custom recipes| CreateRecipe[🍲 Create Recipe]
+    Recipe -->|Modifies saved recipes| EditRecipe[✍️ Edit Recipe]
+
+    Analysis -->|Calculates daily intake| CalcIntake[📉 Calculate Nutrients]
+    Analysis -->|Compares with diet goals| CompareGoals[🎯 Compare with Goals]
+    Analysis -->|Detects missing micronutrients| ShowDeficiency[⚠️ Identify Ignored Micronutrients]
+    ShowDeficiency -->|Suggests nutrient-rich foods| SuggestFoods[🥦 Recommend Food Sources]

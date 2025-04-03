@@ -1,0 +1,77 @@
+classDiagram
+    class Nutrients {
+        +Nutrients SumNutrients(Nutrients inFoodA, Nutrients inFoodB)
+    }
+
+    class Food {
+        +String name
+        +List~String~ keywords
+        +Nutrients nutrients
+        +void displayInfo()
+    }
+
+    class BasicFood {
+        +BasicFood(String name, List~String~ keywords, int nutrients[])
+    }
+
+    class CompositeFood {
+        +List~Food~ ingredients
+        +Nutrients calculateNutrients()
+        +void addIngredient(Food food)
+        +void editInfredients(Food food)
+    }
+
+    class FoodDatabase {
+        +List~Food~ foods
+        +void loadDatabase()
+        +void saveDatabase()
+        +void addFood(Food food)
+        +Food searchFood(String keyword)
+    }
+
+    class User {
+        +String name
+        +String email
+        +String password
+        +String gender
+        +int age
+        +double height
+        +double weight
+        +int TargetCalories
+        +String activityLevel
+        +double calculateTargetCalories(String method)
+        +double Login(String email, String password)
+    }
+
+    class DailyLog {
+        +Date date
+        +List~Food~ consumedFoods
+        +double height
+        +double weight
+        +String activityLevel
+        +void addLog(Food food, int servings, Date date)
+        +void deleteLog(Food food, Date date)
+        +void undoAction()
+        +void redoAction()
+        +void viewLog(Date date)
+    }
+
+    class DietManager {
+        +User user
+        +FoodDatabase database
+        +DailyLog log
+        +void calculateCalorieBalance()
+        +List~Food~ FoodSuggestions()
+    }
+
+    %% Relationships %%
+    Food <|-- BasicFood
+    Food <|-- CompositeFood
+    CompositeFood "1" -- "*" Food : contains
+    FoodDatabase "1" -- "*" Food : manages
+    User "1" -- "1" DailyLog : maintains
+    DailyLog "1" -- "*" Food : logs
+    DietManager "1" -- "1" User : has
+    DietManager "1" -- "1" FoodDatabase : manages
+    DietManager "1" -- "1" DailyLog : tracks
+    Food "1" -- "1" Nutrients : has

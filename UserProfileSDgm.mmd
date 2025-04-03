@@ -1,0 +1,44 @@
+sequenceDiagram
+    participant User
+    participant GUI
+    participant System
+    participant Database
+
+    User ->> GUI: Open App/Login Page
+    User ->> GUI: Enter Username & Password
+    GUI ->> System: Validate Credentials
+    System ->> Database: Check User Credentials
+    alt Valid Login
+        Database -->> System: User Found
+        System -->> GUI: Grant Access & Show Dashboard
+    else Invalid Login
+        Database -->> System: User Not Found/Incorrect Password
+        System -->> GUI: Show "Invalid Credentials"
+    end
+
+    alt User Chooses to Register Instead
+        User ->> GUI: Clicks "Register"
+        GUI ->> System: Show Registration Form
+        User ->> GUI: Enter Details (Username, Email, Password)
+        GUI ->> System: Validate Registration Data
+        System ->> Database: Check for Duplicate Username/Email
+        alt Username/Email Already Exists
+            Database -->> System: Conflict Found
+            System -->> GUI: Show "Username/Email Already Taken"
+        else Unique Username/Email
+            Database -->> System: Save New User
+            System -->> GUI: Show "Registration Successful"
+        end
+    end
+
+    alt User Wants to Reset Password
+        User ->> GUI: Clicks "Forgot Password?"
+        GUI ->> System: Request Password Reset
+        System ->> Database: Check If Email Exists
+        alt Email Exists
+            Database -->> System: Send Reset Link
+            System -->> GUI: Show "Password Reset Email Sent"
+        else Email Not Found
+            Database -->> System: Show "Email Not Registered"
+        end
+    end

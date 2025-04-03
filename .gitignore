@@ -1,0 +1,16 @@
+# Ignore build artifacts
+YADAconsole/YADAconsole/bin/
+YADAconsole/YADAconsole/obj/
+
+# Ignore IDE-specific files
+.vs/
+.vscode/
+*.user
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore system files
+.DS_Store
+Thumbs.db

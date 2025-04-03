@@ -1,0 +1,39 @@
+sequenceDiagram
+    participant User
+    participant GUI
+    participant System
+    participant Database
+
+    User ->> GUI: Select Date for Logs
+    GUI ->> System: Request Logs for Selected Date
+    System ->> Database: Fetch Logs from Database
+    Database -->> System: Return Logs
+    System -->> GUI: Display Logs for User
+
+    loop User Edits Logs
+        User ->> GUI: Modify Log Entry (Add/Edit/Delete)
+        GUI ->> GUI: Store Change in Action Stack (Undo/Redo)
+    end
+
+    alt User Selects Another Date Before Saving
+        User ->> GUI: Select Another Date
+        GUI ->> System: Request Logs for New Date
+        System ->> Database: Fetch New Date Logs
+        Database -->> System: Return Logs
+        System -->> GUI: Display New Date Logs
+
+        loop More Edits
+            User ->> GUI: Modify Log Entry
+            GUI ->> GUI: Store Change in Action Stack (Undo/Redo)
+        end
+    end
+
+    User ->> GUI: Clicks "Save Changes"
+    GUI ->> System: Send All Modified Logs to Database
+    System ->> Database: Update Only Changed Logs
+    Database -->> System: Save Success
+    System -->> GUI: Confirm Save to User
+
+    alt User Closes Session
+        GUI ->> GUI: Clear Action Stack (Undo/Redo Disabled)
+    end
