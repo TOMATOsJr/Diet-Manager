@@ -1,0 +1,42 @@
+{
+  "Foods": [
+    {
+      "$type": "BasicFood",
+      "Name": "Apple",
+      "Keywords": [
+        "fruit",
+        "fresh"
+      ],
+      "Nutrients": {
+        "Calories": 52,
+        "Protein": 0.3,
+        "Carbohydrates": 14,
+        "Fat": 0.2,
+        "Micronutrients": {
+          "Vitamin C": 4.6,
+          "Potassium": 107
+        }
+      },
+      "ServingSize": 100
+    },
+    {
+      "$type": "BasicFood",
+      "Name": "Chicken Breast",
+      "Keywords": [
+        "meat",
+        "protein"
+      ],
+      "Nutrients": {
+        "Calories": 165,
+        "Protein": 31,
+        "Carbohydrates": 0,
+        "Fat": 3.6,
+        "Micronutrients": {
+          "Vitamin B6": 0.6,
+          "Niacin": 13.7
+        }
+      },
+      "ServingSize": 100
+    }
+  ]
+}

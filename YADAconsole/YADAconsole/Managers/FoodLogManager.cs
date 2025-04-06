@@ -198,11 +198,42 @@ namespace YADAconsole.Managers
         private void AddFoodToLog(DailyLog log)
         {
             Console.WriteLine("\n=== Add Food to Log ===");
-            _dietManager.Database.DisplayAllFoods();
-            Console.Write("Enter the number of the food to add: ");
-            if (int.TryParse(Console.ReadLine(), out int foodIndex) && foodIndex > 0 && foodIndex <= _dietManager.Database.Foods.Count)
+            
+            // Add keyword search options
+            Console.WriteLine("1. Show all foods");
+            Console.WriteLine("2. Search by keyword");
+            Console.Write("Enter choice: ");
+            
+            string choice = Console.ReadLine() ?? "1";
+            
+            List<Food> foodOptions;
+            
+            if (choice == "2")
             {
-                Food food = _dietManager.Database.Foods[foodIndex - 1];
+                Console.Write("Enter search keyword: ");
+                string keyword = Console.ReadLine() ?? "";
+                foodOptions = _dietManager.Database.SearchFood(keyword);
+                
+                if (foodOptions.Count == 0)
+                {
+                    Console.WriteLine("No foods found matching that keyword.");
+                    return;
+                }
+                
+                Console.WriteLine("\nSearch results:");
+                _dietManager.Database.DisplayFoodList(foodOptions);
+            }
+            else
+            {
+                // Show all foods
+                _dietManager.Database.DisplayAllFoods();
+                foodOptions = _dietManager.Database.Foods;
+            }
+            
+            Console.Write("Enter the number of the food to add: ");
+            if (int.TryParse(Console.ReadLine(), out int foodIndex) && foodIndex > 0 && foodIndex <= foodOptions.Count)
+            {
+                Food food = foodOptions[foodIndex - 1];
                 Console.Write("Enter the number of servings: ");
                 if (double.TryParse(Console.ReadLine(), out double servings) && servings > 0)
                 {

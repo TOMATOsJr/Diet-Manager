@@ -1,0 +1,76 @@
+[
+  {
+    "Date": "2025-04-06",
+    "ConsumedFoods": [
+      {
+        "FoodId": "BasicFood-Apple",
+        "FoodName": "Apple",
+        "Servings": 10,
+        "ServingSize": 100
+      },
+      {
+        "FoodId": "BasicFood-Chicken Breast",
+        "FoodName": "Chicken Breast",
+        "Servings": 5,
+        "ServingSize": 100
+      },
+      {
+        "FoodId": "BasicFood-Cheese (Cheddar)",
+        "FoodName": "Cheese (Cheddar)",
+        "Servings": 10,
+        "ServingSize": 100
+      },
+      {
+        "FoodId": "BasicFood-Apple",
+        "FoodName": "Apple",
+        "Servings": 1,
+        "ServingSize": 100
+      },
+      {
+        "FoodId": "BasicFood-Honey",
+        "FoodName": "Honey",
+        "Servings": 1,
+        "ServingSize": 100
+      },
+      {
+        "FoodId": "BasicFood-Honey",
+        "FoodName": "Honey",
+        "Servings": 10,
+        "ServingSize": 100
+      },
+      {
+        "FoodId": "BasicFood-Apple",
+        "FoodName": "Apple",
+        "Servings": 1,
+        "ServingSize": 100
+      }
+    ],
+    "Weight": 80,
+    "Height": 165,
+    "Age": 23,
+    "ActivityLevel": "active"
+  },
+  {
+    "Date": "2005-10-11",
+    "ConsumedFoods": [
+      {
+        "FoodId": "BasicFood-Chicken Breast",
+        "FoodName": "Chicken Breast",
+        "Servings": 10,
+        "ServingSize": 100
+      }
+    ],
+    "Weight": 50,
+    "Height": 165,
+    "Age": 23,
+    "ActivityLevel": "light"
+  },
+  {
+    "Date": "2020-01-01",
+    "ConsumedFoods": [],
+    "Weight": 80,
+    "Height": 165,
+    "Age": 23,
+    "ActivityLevel": "light"
+  }
+]

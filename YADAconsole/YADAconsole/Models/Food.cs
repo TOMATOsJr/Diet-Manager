@@ -2,6 +2,7 @@ namespace YADAconsole.Models
 {
     public abstract class Food
     {
+        public int Id { get; set; } // New property for tracking
         public string Name { get; set; }
         public List<string> Keywords { get; set; }
         public Nutrients Nutrients { get; set; }
@@ -9,6 +10,7 @@ namespace YADAconsole.Models
 
         protected Food(string name)
         {
+            Id = 0; // Default ID
             Name = name;
             Keywords = new List<string>();
             Nutrients = new Nutrients();

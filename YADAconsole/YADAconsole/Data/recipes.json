@@ -1,0 +1,28 @@
+[
+  {
+    "Id": 1001,
+    "Name": "abc",
+    "Category": "abc",
+    "Carbs": 178.60000000000002,
+    "Fats": 0.2,
+    "Protein": 0.8999999999999999,
+    "Sugar": 174.6,
+    "Fiber": 2.8,
+    "Keywords": [
+      "abc"
+    ],
+    "UserId": "546757af-92d3-458b-9947-ffd30ffb6875",
+    "Ingredients": [
+      {
+        "FoodId": "BasicFood-Honey",
+        "Name": "Honey",
+        "Quantity": 2
+      },
+      {
+        "FoodId": "BasicFood-Apple",
+        "Name": "Apple",
+        "Quantity": 1
+      }
+    ]
+  }
+]

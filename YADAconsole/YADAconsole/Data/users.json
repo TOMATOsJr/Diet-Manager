@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "30324fc6-00af-461b-9651-2e1bf84c395a",
+    "Name": "anc",
+    "Email": "abc@gmail.com",
+    "PasswordHash": "6OqLw7c8akduObCma7sg5nP0wZBMc7UwimqpdnnGMHGkWQvcwm6G/PExVfvTcdNorODCWx7UZI5sd2yynFKxWg==",
+    "PasswordSalt": "6cQuAt65Ls5IEbgE6MHpyLORLIuol8oB79rTzyOgC/bGUitoDkmJ6Al/MC4onWPq5rxA6BXwOIaPPDVpLo3vaZKerqqdSnIiTyBc/aML7ZoiR8sEMlHgQR92JjUdmQTsyeCyinS8YB8EGPbFiKA0oCU6gynAelPKD+X20HMoyPE=",
+    "Gender": "male",
+    "Age": 20,
+    "Height": 170,
+    "Weight": 80,
+    "TargetCalories": 2177,
+    "ActivityLevel": "sedentary",
+    "CalorieCalculationMethod": "Harris-Benedict",
+    "BodyFatPercentage": 20
+  },
+  {
+    "Id": "546757af-92d3-458b-9947-ffd30ffb6875",
+    "Name": "abc",
+    "Email": "a@gmail.com",
+    "PasswordHash": "6wVyZZCdhr16AXCUdMdtoQpwoxmK0Inmg661twa9LVvTCO4sBpRlfz0a6pkNquV6ZONNLZPHcyvQwI93cgRvPw==",
+    "PasswordSalt": "zX3cjV46v7zAQEhL6g2Y3wyTI7nIqGzddR2vJ1M2aWgeVpAeJCSN4Trv95CLidEDGjvvkjTNaR9GF8cu6SWNKr6GsWuI/Lhg+VGQzwrjHM94l/twJ6PDr6TcOP/V1cuEaK+zLdNV61yk49jPU7mKzanU5JYIbKead4Jt8wKpqqg=",
+    "Gender": "male",
+    "Age": 23,
+    "Height": 165,
+    "Weight": 80,
+    "TargetCalories": 2366,
+    "ActivityLevel": "light",
+    "CalorieCalculationMethod": "Mifflin-St Jeor",
+    "BodyFatPercentage": 10
+  }
+]

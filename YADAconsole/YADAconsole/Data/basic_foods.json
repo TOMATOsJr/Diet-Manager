@@ -1,242 +1,423 @@
 [
-    {
-        "id": 1,
-        "name": "Apple",
-        "category": "Fruit",
-        "carbs": 13.8,
-        "fats": 0.2,
-        "protein": 0.3,
-        "sugar": 10.4,
-        "fiber": 2.4
-    },
-    {
-        "id": 2,
-        "name": "Banana",
-        "category": "Fruit",
-        "carbs": 22.8,
-        "fats": 0.3,
-        "protein": 1.1,
-        "sugar": 12.2,
-        "fiber": 2.6
-    },
-    {
-        "id": 3,
-        "name": "Orange",
-        "category": "Fruit",
-        "carbs": 11.8,
-        "fats": 0.1,
-        "protein": 0.9,
-        "sugar": 9.2,
-        "fiber": 2.4
-    },
-    {
-        "id": 4,
-        "name": "Rice (Cooked)",
-        "category": "Grain",
-        "carbs": 28.0,
-        "fats": 0.3,
-        "protein": 2.7,
-        "sugar": 0.1,
-        "fiber": 0.4
-    },
-    {
-        "id": 5,
-        "name": "Bread (Whole)",
-        "category": "Grain",
-        "carbs": 13.8,
-        "fats": 1.0,
-        "protein": 3.6,
-        "sugar": 1.6,
-        "fiber": 2.0
-    },
-    {
-        "id": 6,
-        "name": "Oats (Cooked)",
-        "category": "Grain",
-        "carbs": 12.0,
-        "fats": 2.4,
-        "protein": 2.4,
-        "sugar": 0.5,
-        "fiber": 1.7
-    },
-    {
-        "id": 7,
-        "name": "Chicken Breast",
-        "category": "Protein",
-        "carbs": 0.0,
-        "fats": 3.6,
-        "protein": 31.0,
-        "sugar": 0.0,
-        "fiber": 0.0
-    },
-    {
-        "id": 8,
-        "name": "Egg (Boiled)",
-        "category": "Protein",
-        "carbs": 0.6,
-        "fats": 5.3,
-        "protein": 6.3,
-        "sugar": 0.6,
-        "fiber": 0.0
-    },
-    {
-        "id": 9,
-        "name": "Tofu",
-        "category": "Protein",
-        "carbs": 1.9,
-        "fats": 4.8,
-        "protein": 8.1,
-        "sugar": 0.3,
-        "fiber": 0.3
-    },
-    {
-        "id": 10,
-        "name": "Milk (Whole)",
-        "category": "Dairy",
-        "carbs": 4.8,
-        "fats": 3.3,
-        "protein": 3.2,
-        "sugar": 5.0,
-        "fiber": 0.0
-    },
-    {
-        "id": 11,
-        "name": "Yogurt (Plain)",
-        "category": "Dairy",
-        "carbs": 4.7,
-        "fats": 3.3,
-        "protein": 4.3,
-        "sugar": 4.7,
-        "fiber": 0.0
-    },
-    {
-        "id": 12,
-        "name": "Cheese (Cheddar)",
-        "category": "Dairy",
-        "carbs": 1.3,
-        "fats": 33.1,
-        "protein": 25.0,
-        "sugar": 0.5,
-        "fiber": 0.0
-    },
-    {
-        "id": 13,
-        "name": "Almonds (Raw)",
-        "category": "Nuts & Seeds",
-        "carbs": 21.6,
-        "fats": 49.9,
-        "protein": 21.2,
-        "sugar": 4.4,
-        "fiber": 12.5
-    },
-    {
-        "id": 14,
-        "name": "Peanuts (Roasted)",
-        "category": "Nuts & Seeds",
-        "carbs": 16.1,
-        "fats": 49.2,
-        "protein": 25.8,
-        "sugar": 4.7,
-        "fiber": 8.5
-    },
-    {
-        "id": 15,
-        "name": "Broccoli (Raw)",
-        "category": "Vegetable",
-        "carbs": 6.6,
-        "fats": 0.3,
-        "protein": 2.8,
-        "sugar": 1.7,
-        "fiber": 2.6
-    },
-    {
-        "id": 16,
-        "name": "Carrot (Raw)",
-        "category": "Vegetable",
-        "carbs": 9.6,
-        "fats": 0.2,
-        "protein": 0.9,
-        "sugar": 4.7,
-        "fiber": 2.8
-    },
-    {
-        "id": 17,
-        "name": "Spinach (Raw)",
-        "category": "Vegetable",
-        "carbs": 3.6,
-        "fats": 0.4,
-        "protein": 2.9,
-        "sugar": 0.4,
-        "fiber": 2.2
-    },
-    {
-        "id": 18,
-        "name": "Potato (Boiled)",
-        "category": "Vegetable",
-        "carbs": 20.1,
-        "fats": 0.1,
-        "protein": 1.9,
-        "sugar": 1.2,
-        "fiber": 1.8
-    },
-    {
-        "id": 19,
-        "name": "Olive Oil",
-        "category": "Fats & Oils",
-        "carbs": 0.0,
-        "fats": 100.0,
-        "protein": 0.0,
-        "sugar": 0.0,
-        "fiber": 0.0
-    },
-    {
-        "id": 20,
-        "name": "Butter",
-        "category": "Fats & Oils",
-        "carbs": 0.1,
-        "fats": 81.0,
-        "protein": 0.9,
-        "sugar": 0.1,
-        "fiber": 0.0
-    },
-    {
-        "id": 21,
-        "name": "Sugar (White)",
-        "category": "Sweeteners",
-        "carbs": 100.0,
-        "fats": 0.0,
-        "protein": 0.0,
-        "sugar": 100.0,
-        "fiber": 0.0
-    },
-    {
-        "id": 22,
-        "name": "Honey",
-        "category": "Sweeteners",
-        "carbs": 82.4,
-        "fats": 0.0,
-        "protein": 0.3,
-        "sugar": 82.1,
-        "fiber": 0.2
-    },
-    {
-        "id": 23,
-        "name": "Lentils (Cooked)",
-        "category": "Legumes",
-        "carbs": 20.1,
-        "fats": 0.4,
-        "protein": 9.0,
-        "sugar": 1.8,
-        "fiber": 7.9
-    },
-    {
-        "id": 24,
-        "name": "Chickpeas (Cooked)",
-        "category": "Legumes",
-        "carbs": 27.4,
-        "fats": 2.6,
-        "protein": 8.9,
-        "sugar": 4.8,
-        "fiber": 7.6
-    }
+  {
+    "Id": 1,
+    "Name": "Apple",
+    "Category": "apple",
+    "Carbs": 13.8,
+    "Fats": 0.2,
+    "Protein": 0.3,
+    "Sugar": 10.4,
+    "Fiber": 2.4,
+    "Keywords": [
+      "apple",
+      "fruit",
+      "sweet",
+      "fresh",
+      "snack"
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Banana",
+    "Category": "banana",
+    "Carbs": 22.8,
+    "Fats": 0.3,
+    "Protein": 1.1,
+    "Sugar": 12.2,
+    "Fiber": 2.6,
+    "Keywords": [
+      "banana",
+      "fruit",
+      "sweet",
+      "potassium",
+      "tropical"
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Orange",
+    "Category": "orange",
+    "Carbs": 11.8,
+    "Fats": 0.1,
+    "Protein": 0.9,
+    "Sugar": 9.2,
+    "Fiber": 2.4,
+    "Keywords": [
+      "orange",
+      "fruit",
+      "citrus",
+      "vitamin c",
+      "sweet"
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Rice (Cooked)",
+    "Category": "rice",
+    "Carbs": 28,
+    "Fats": 0.3,
+    "Protein": 2.7,
+    "Sugar": 0.1,
+    "Fiber": 0.4,
+    "Keywords": [
+      "rice",
+      "grain",
+      "carb",
+      "starch",
+      "white rice",
+      "cooked"
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Bread (Whole)",
+    "Category": "bread",
+    "Carbs": 13.8,
+    "Fats": 1,
+    "Protein": 3.6,
+    "Sugar": 1.6,
+    "Fiber": 2,
+    "Keywords": [
+      "bread",
+      "whole bread",
+      "grain",
+      "whole grain",
+      "wheat",
+      "sandwich"
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Oats (Cooked)",
+    "Category": "oats",
+    "Carbs": 12,
+    "Fats": 2.4,
+    "Protein": 2.4,
+    "Sugar": 0.5,
+    "Fiber": 1.7,
+    "Keywords": [
+      "oats",
+      "oatmeal",
+      "grain",
+      "breakfast",
+      "cooked",
+      "porridge"
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "Chicken Breast",
+    "Category": "chicken",
+    "Carbs": 0,
+    "Fats": 3.6,
+    "Protein": 31,
+    "Sugar": 0,
+    "Fiber": 0,
+    "Keywords": [
+      "chicken",
+      "chicken breast",
+      "protein",
+      "meat",
+      "poultry",
+      "lean meat"
+    ]
+  },
+  {
+    "Id": 8,
+    "Name": "Egg (Boiled)",
+    "Category": "egg",
+    "Carbs": 0.6,
+    "Fats": 5.3,
+    "Protein": 6.3,
+    "Sugar": 0.6,
+    "Fiber": 0,
+    "Keywords": [
+      "egg",
+      "boiled egg",
+      "protein",
+      "breakfast",
+      "hard boiled"
+    ]
+  },
+  {
+    "Id": 9,
+    "Name": "Tofu",
+    "Category": "tofu",
+    "Carbs": 1.9,
+    "Fats": 4.8,
+    "Protein": 8.1,
+    "Sugar": 0.3,
+    "Fiber": 0.3,
+    "Keywords": [
+      "tofu",
+      "protein",
+      "vegetarian",
+      "vegan",
+      "soy",
+      "plant protein"
+    ]
+  },
+  {
+    "Id": 10,
+    "Name": "Milk (Whole)",
+    "Category": "milk",
+    "Carbs": 4.8,
+    "Fats": 3.3,
+    "Protein": 3.2,
+    "Sugar": 5,
+    "Fiber": 0,
+    "Keywords": [
+      "milk",
+      "whole milk",
+      "dairy",
+      "calcium",
+      "drink"
+    ]
+  },
+  {
+    "Id": 11,
+    "Name": "Yogurt (Plain)",
+    "Category": "yogurt",
+    "Carbs": 4.7,
+    "Fats": 3.3,
+    "Protein": 4.3,
+    "Sugar": 4.7,
+    "Fiber": 0,
+    "Keywords": [
+      "yogurt",
+      "plain yogurt",
+      "dairy",
+      "probiotic",
+      "breakfast"
+    ]
+  },
+  {
+    "Id": 12,
+    "Name": "Cheese (Cheddar)",
+    "Category": "cheese",
+    "Carbs": 1.3,
+    "Fats": 33.1,
+    "Protein": 25,
+    "Sugar": 0.5,
+    "Fiber": 0,
+    "Keywords": [
+      "cheese",
+      "cheddar",
+      "dairy",
+      "high fat",
+      "high protein"
+    ]
+  },
+  {
+    "Id": 13,
+    "Name": "Almonds (Raw)",
+    "Category": "almonds",
+    "Carbs": 21.6,
+    "Fats": 49.9,
+    "Protein": 21.2,
+    "Sugar": 4.4,
+    "Fiber": 12.5,
+    "Keywords": [
+      "almonds",
+      "nuts",
+      "raw",
+      "healthy fats",
+      "snack",
+      "high fiber"
+    ]
+  },
+  {
+    "Id": 14,
+    "Name": "Peanuts (Roasted)",
+    "Category": "peanuts",
+    "Carbs": 16.1,
+    "Fats": 49.2,
+    "Protein": 25.8,
+    "Sugar": 4.7,
+    "Fiber": 8.5,
+    "Keywords": [
+      "peanuts",
+      "roasted",
+      "nuts",
+      "legume",
+      "protein",
+      "snack"
+    ]
+  },
+  {
+    "Id": 15,
+    "Name": "Broccoli (Raw)",
+    "Category": "broccoli",
+    "Carbs": 6.6,
+    "Fats": 0.3,
+    "Protein": 2.8,
+    "Sugar": 1.7,
+    "Fiber": 2.6,
+    "Keywords": [
+      "broccoli",
+      "vegetable",
+      "green",
+      "raw",
+      "cruciferous"
+    ]
+  },
+  {
+    "Id": 16,
+    "Name": "Carrot (Raw)",
+    "Category": "carrot",
+    "Carbs": 9.6,
+    "Fats": 0.2,
+    "Protein": 0.9,
+    "Sugar": 4.7,
+    "Fiber": 2.8,
+    "Keywords": [
+      "carrot",
+      "vegetable",
+      "orange",
+      "raw",
+      "crunchy",
+      "root"
+    ]
+  },
+  {
+    "Id": 17,
+    "Name": "Spinach (Raw)",
+    "Category": "spinach",
+    "Carbs": 3.6,
+    "Fats": 0.4,
+    "Protein": 2.9,
+    "Sugar": 0.4,
+    "Fiber": 2.2,
+    "Keywords": [
+      "spinach",
+      "vegetable",
+      "leafy green",
+      "raw",
+      "salad",
+      "iron"
+    ]
+  },
+  {
+    "Id": 18,
+    "Name": "Potato (Boiled)",
+    "Category": "potato",
+    "Carbs": 20.1,
+    "Fats": 0.1,
+    "Protein": 1.9,
+    "Sugar": 1.2,
+    "Fiber": 1.8,
+    "Keywords": [
+      "potato",
+      "vegetable",
+      "starch",
+      "boiled",
+      "root",
+      "carb"
+    ]
+  },
+  {
+    "Id": 19,
+    "Name": "Olive Oil",
+    "Category": "olive oil",
+    "Carbs": 0,
+    "Fats": 100,
+    "Protein": 0,
+    "Sugar": 0,
+    "Fiber": 0,
+    "Keywords": [
+      "olive oil",
+      "oil",
+      "fat",
+      "cooking oil",
+      "healthy fat",
+      "monounsaturated"
+    ]
+  },
+  {
+    "Id": 20,
+    "Name": "Butter",
+    "Category": "butter",
+    "Carbs": 0.1,
+    "Fats": 81,
+    "Protein": 0.9,
+    "Sugar": 0.1,
+    "Fiber": 0,
+    "Keywords": [
+      "butter",
+      "dairy",
+      "fat",
+      "saturated fat",
+      "cooking"
+    ]
+  },
+  {
+    "Id": 21,
+    "Name": "Sugar (White)",
+    "Category": "sugar",
+    "Carbs": 100,
+    "Fats": 0,
+    "Protein": 0,
+    "Sugar": 100,
+    "Fiber": 0,
+    "Keywords": [
+      "sugar",
+      "white sugar",
+      "sweetener",
+      "carb",
+      "baking"
+    ]
+  },
+  {
+    "Id": 22,
+    "Name": "Honey",
+    "Category": "honey",
+    "Carbs": 82.4,
+    "Fats": 0,
+    "Protein": 0.3,
+    "Sugar": 82.1,
+    "Fiber": 0.2,
+    "Keywords": [
+      "honey",
+      "sweetener",
+      "natural",
+      "sugar",
+      "sticky"
+    ]
+  },
+  {
+    "Id": 23,
+    "Name": "Lentils (Cooked)",
+    "Category": "lentils",
+    "Carbs": 20.1,
+    "Fats": 0.4,
+    "Protein": 9,
+    "Sugar": 1.8,
+    "Fiber": 7.9,
+    "Keywords": [
+      "lentils",
+      "legumes",
+      "protein",
+      "fiber",
+      "cooked",
+      "plant protein"
+    ]
+  },
+  {
+    "Id": 24,
+    "Name": "Chickpeas (Cooked)",
+    "Category": "chickpeas",
+    "Carbs": 27.4,
+    "Fats": 2.6,
+    "Protein": 8.9,
+    "Sugar": 4.8,
+    "Fiber": 7.6,
+    "Keywords": [
+      "chickpeas",
+      "garbanzo beans",
+      "legumes",
+      "protein",
+      "fiber",
+      "cooked"
+    ]
+  }
 ]

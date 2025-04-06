@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using YADAconsole.Services;
 
 namespace YADAconsole.Models
 {
@@ -21,45 +22,58 @@ namespace YADAconsole.Models
 
         private void InitializeSampleFoods()
         {
-            // Add some sample basic foods
-            var apple = new BasicFood("Apple")
+            // Try to load foods from basic_foods.json
+            var persistenceService = new DataPersistenceService();
+            var basicFoods = persistenceService.ConvertBasicFoodsDataToFoods();
+            
+            if (basicFoods.Count > 0)
             {
-                Keywords = new List<string> { "fruit", "fresh" },
-                Nutrients = new Nutrients
-                {
-                    Calories = 52,
-                    Carbohydrates = 14,
-                    Protein = 0.3,
-                    Fat = 0.2,
-                    Micronutrients = new Dictionary<string, double>
-                    {
-                        { "Vitamin C", 4.6 },
-                        { "Potassium", 107 }
-                    }
-                },
-                ServingSize = 100
-            };
-
-            var chicken = new BasicFood("Chicken Breast")
+                // Use the loaded basic foods
+                Foods.AddRange(basicFoods);
+                Console.WriteLine($"Loaded {basicFoods.Count} foods from basic_foods.json");
+            }
+            else
             {
-                Keywords = new List<string> { "meat", "protein" },
-                Nutrients = new Nutrients
+                // Fallback to hard-coded foods if loading fails
+                var apple = new BasicFood("Apple")
                 {
-                    Calories = 165,
-                    Carbohydrates = 0,
-                    Protein = 31,
-                    Fat = 3.6,
-                    Micronutrients = new Dictionary<string, double>
+                    Keywords = new List<string> { "fruit", "fresh" },
+                    Nutrients = new Nutrients
                     {
-                        { "Vitamin B6", 0.6 },
-                        { "Niacin", 13.7 }
-                    }
-                },
-                ServingSize = 100
-            };
+                        Calories = 52,
+                        Carbohydrates = 14,
+                        Protein = 0.3,
+                        Fat = 0.2,
+                        Micronutrients = new Dictionary<string, double>
+                        {
+                            { "Sugar", 10.4 },
+                            { "Fiber", 2.4 }
+                        }
+                    },
+                    ServingSize = 100
+                };
 
-            Foods.Add(apple);
-            Foods.Add(chicken);
+                var chicken = new BasicFood("Chicken Breast")
+                {
+                    Keywords = new List<string> { "meat", "protein" },
+                    Nutrients = new Nutrients
+                    {
+                        Calories = 165,
+                        Carbohydrates = 0,
+                        Protein = 31,
+                        Fat = 3.6,
+                        Micronutrients = new Dictionary<string, double>
+                        {
+                            { "Sugar", 0 },
+                            { "Fiber", 0 }
+                        }
+                    },
+                    ServingSize = 100
+                };
+
+                Foods.Add(apple);
+                Foods.Add(chicken);
+            }
         }
 
         public void AddFood(Food food)
@@ -82,6 +96,25 @@ namespace YADAconsole.Models
             for (int i = 0; i < Foods.Count; i++)
             {
                 Console.WriteLine($"{i+1}. {Foods[i].Name}");
+                // Show keywords to help users identify foods
+                if (Foods[i].Keywords.Count > 0)
+                {
+                    Console.WriteLine($"   Keywords: {string.Join(", ", Foods[i].Keywords)}");
+                }
+            }
+        }
+
+        public void DisplayFoodList(List<Food> foods)
+        {
+            Console.WriteLine($"Found {foods.Count} items:");
+            for (int i = 0; i < foods.Count; i++)
+            {
+                Console.WriteLine($"{i+1}. {foods[i].Name}");
+                // Display keywords to help users see why this item matched
+                if (foods[i].Keywords.Count > 0)
+                {
+                    Console.WriteLine($"   Keywords: {string.Join(", ", foods[i].Keywords)}");
+                }
             }
         }
     }
