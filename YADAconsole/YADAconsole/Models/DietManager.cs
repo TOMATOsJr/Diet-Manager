@@ -21,9 +21,23 @@ namespace YADAconsole.Models
         {
             if (!UserLogs.ContainsKey(date))
             {
-                UserLogs[date] = new DailyLog(date);
+                var log = new DailyLog(date);
+                // Do not initialize with current user stats automatically
+                UserLogs[date] = log;
             }
             return UserLogs[date];
+        }
+
+        // This new method just checks if a log exists without creating one
+        public bool HasLogForDate(DateOnly date)
+        {
+            return UserLogs.ContainsKey(date);
+        }
+
+        // Get an existing log without creating a new one
+        public DailyLog GetExistingDailyLog(DateOnly date)
+        {
+            return UserLogs.TryGetValue(date, out var log) ? log : null;
         }
 
         public void AddFoodToLog(Food food, double servings, DateOnly date)
@@ -50,7 +64,7 @@ namespace YADAconsole.Models
             DailyLog log = UserLogs[date];
             double totalCalories = 0;
 
-            foreach (var (food, servings) in log.ConsumedFoods)
+            foreach (var (food, servings) in log.ConsumedFoodItems)
             {
                 totalCalories += food.Nutrients.Calories * servings;
             }
@@ -77,7 +91,7 @@ namespace YADAconsole.Models
             double totalCarbs = 0;
             double totalFat = 0;
 
-            foreach (var (food, servings) in log.ConsumedFoods)
+            foreach (var (food, servings) in log.ConsumedFoodItems)
             {
                 totalCalories += food.Nutrients.Calories * servings;
                 totalProtein += food.Nutrients.Protein * servings;
@@ -128,6 +142,30 @@ namespace YADAconsole.Models
             // Save food database and user logs
             _persistenceService.SaveFoodDatabase(Database);
             _persistenceService.SaveUserLogs(User.Id, UserLogs);
+        }
+
+        // Calculate calories based on the daily log's recorded metrics and user's method
+        public int CalculateCaloriesForDate(DateOnly date)
+        {
+            // Get log if it exists, otherwise use user's current stats
+            if (!UserLogs.TryGetValue(date, out DailyLog log))
+            {
+                return User.TargetCalories;
+            }
+            
+            // Create a temporary user with the day's metrics but use user's calculation method
+            var tempUser = new User
+            {
+                Gender = User.Gender,
+                Age = log.Age > 0 ? log.Age : User.Age,
+                Weight = log.Weight > 0 ? log.Weight : User.Weight,
+                Height = log.Height > 0 ? log.Height : User.Height,
+                ActivityLevel = !string.IsNullOrEmpty(log.ActivityLevel) ? log.ActivityLevel : User.ActivityLevel,
+                BodyFatPercentage = User.BodyFatPercentage,
+                CalorieCalculationMethod = User.CalorieCalculationMethod
+            };
+            
+            return (int)tempUser.CalculateTargetCalories();
         }
     }
 }

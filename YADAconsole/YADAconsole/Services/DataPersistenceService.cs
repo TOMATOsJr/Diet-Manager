@@ -132,8 +132,13 @@ namespace YADAconsole.Services
 
                 // Deserialize as a list first, then convert to dictionary
                 var logsList = JsonSerializer.Deserialize<List<DailyLog>>(json, options) ?? new List<DailyLog>();
+                
+                // Load the food database for reference
+                var foodDatabase = LoadFoodDatabase();
+                
                 foreach (var log in logsList)
                 {
+                    log.SyncFoodLists(foodDatabase); // Rebuild the food lists from IDs
                     logs[log.Date] = log;
                 }
 

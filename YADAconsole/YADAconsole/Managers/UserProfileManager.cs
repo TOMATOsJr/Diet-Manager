@@ -28,8 +28,13 @@ namespace YADAconsole.Managers
             Console.WriteLine("4. Edit Height");
             Console.WriteLine("5. Edit Weight");
             Console.WriteLine("6. Edit Activity Level");
-            Console.WriteLine("7. Recalculate Target Calories");
-            Console.WriteLine("8. Back to Main Menu");
+            Console.WriteLine("7. Select Calorie Calculation Method");
+            if (_dietManager.User.CalorieCalculationMethod == "Katch-McArdle")
+            {
+                Console.WriteLine("8. Set Body Fat Percentage");
+            }
+            Console.WriteLine("9. Recalculate Target Calories");
+            Console.WriteLine("0. Back to Main Menu");
             Console.Write("Enter your choice: ");
 
             string choice = Console.ReadLine() ?? "";
@@ -70,13 +75,63 @@ namespace YADAconsole.Managers
                         _dietManager.User.ActivityLevel = level;
                     break;
                 case "7":
-                    _dietManager.User.CalculateTargetCalories();
-                    Console.WriteLine($"Target calories recalculated: {_dietManager.User.TargetCalories} kcal");
+                    SelectCalorieCalculationMethod();
                     break;
+                case "8":
+                    if (_dietManager.User.CalorieCalculationMethod == "Katch-McArdle")
+                    {
+                        Console.Write("Enter body fat percentage (5-50): ");
+                        if (double.TryParse(Console.ReadLine(), out double bodyFat) && bodyFat > 5 && bodyFat < 50)
+                            _dietManager.User.BodyFatPercentage = bodyFat;
+                    }
+                    break;
+                case "9":
+                    _dietManager.User.CalculateTargetCalories();
+                    Console.WriteLine($"Target calories recalculated: {_dietManager.User.TargetCalories} kcal using {_dietManager.User.CalorieCalculationMethod} method");
+                    break;
+                case "0":
+                    // Return to main menu
+                    return;
             }
 
             // Save user changes
             SaveUserChanges();
+            
+            // Show the profile manager menu again
+            ManageUserProfile();
+        }
+        
+        private void SelectCalorieCalculationMethod()
+        {
+            Console.WriteLine("\n=== Calorie Calculation Methods ===");
+            Console.WriteLine("1. Harris-Benedict: Classic method that uses weight, height, and age");
+            Console.WriteLine("2. Mifflin-St Jeor: More modern and accurate for most people");
+            Console.WriteLine("3. Katch-McArdle: Uses lean body mass for more accurate results (requires body fat %)");
+            Console.Write("Enter your choice: ");
+            
+            string choice = Console.ReadLine() ?? "";
+            switch (choice)
+            {
+                case "1":
+                    _dietManager.User.CalorieCalculationMethod = "Harris-Benedict";
+                    Console.WriteLine("Set calculation method to Harris-Benedict");
+                    break;
+                case "2":
+                    _dietManager.User.CalorieCalculationMethod = "Mifflin-St Jeor";
+                    Console.WriteLine("Set calculation method to Mifflin-St Jeor");
+                    break;
+                case "3":
+                    _dietManager.User.CalorieCalculationMethod = "Katch-McArdle";
+                    Console.WriteLine("Set calculation method to Katch-McArdle");
+                    Console.WriteLine("Note: This method requires your body fat percentage for accurate results.");
+                    Console.Write("Enter your body fat percentage (5-50): ");
+                    if (double.TryParse(Console.ReadLine(), out double bodyFat) && bodyFat > 5 && bodyFat < 50)
+                        _dietManager.User.BodyFatPercentage = bodyFat;
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Keeping current method.");
+                    break;
+            }
         }
 
         private void SaveUserChanges()
