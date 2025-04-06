@@ -12,7 +12,9 @@ namespace YADAconsole.Services
 
         public DataPersistenceService()
         {
-            _basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "YADADietManager");
+            // Change the base path to use a Data directory in the YADAconsole project folder
+            string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", ".."));
+            _basePath = Path.Combine(projectDirectory, "Data");
             _usersPath = Path.Combine(_basePath, "users.json");
             _foodDatabasePath = Path.Combine(_basePath, "fooddatabase.json");
             _userLogsFolder = Path.Combine(_basePath, "userlogs");
